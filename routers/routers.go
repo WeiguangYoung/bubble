@@ -4,6 +4,11 @@ import (
 	"bubble/controller"
 	"bubble/setting"
 	"github.com/gin-gonic/gin"
+
+	_ "bubble/docs"  
+
+	gs "github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
 )
 
 func SetupRouter() *gin.Engine {
@@ -16,6 +21,7 @@ func SetupRouter() *gin.Engine {
 	// 告诉gin框架去哪里找模板文件
 	r.LoadHTMLGlob("templates/*")
 	r.GET("/", controller.IndexHandler)
+	r.GET("/swagger/*any", gs.WrapHandler(swaggerFiles.Handler))
 
 	// v1
 	v1Group := r.Group("v1")
@@ -30,7 +36,7 @@ func SetupRouter() *gin.Engine {
 		// 删除某一个待办事项
 		v1Group.DELETE("/todo/:id", controller.DeleteATodo)
 
-		// 待办事项
+		// 用户信息
 		// 添加
 		v1Group.POST("/user", controller.CreateUser)
 		// 查看所有的待办事项
