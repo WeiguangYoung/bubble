@@ -1,5 +1,5 @@
 # bubble清单
-
+# Frok from https://github.com/Q1mi/bubble
 一个基于gin+gorm开发的练手小项目，通过该项目可初识go web开发该有的姿势。
 
 前端页面基于vue和ElementUI开发，对前端不熟悉的童鞋可直接下载`templates`和`static`文件夹下的内容使用。
