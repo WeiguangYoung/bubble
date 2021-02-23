@@ -1,4 +1,4 @@
-### bubble清单
+# bubble清单
 # Frok from https://github.com/Q1mi/bubble
 一个基于gin+gorm开发的练手小项目，通过该项目可初识go web开发该有的姿势。
 
